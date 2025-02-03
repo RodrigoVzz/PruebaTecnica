@@ -18,17 +18,15 @@ Este es un proyecto realizado como parte de una prueba técnica de desarrollo en
    Para iOS (si tienes macOS):  
    `npx react-native run-ios`
 
-## Tecnologías Usadas
+## Tecnologías 
 - React Native
 - React Navigation
 - React Native Vector Icons
 - react-native-screens
 - react-native-safe-area-context
 
-## Instrucciones de Ejecución
+## Instrucciones 
 1. Abre la aplicación en tu dispositivo o emulador.
 2. Navega entre las pantallas utilizando el menú lateral.
 3. En la pantalla de "Detalles", encontrarás información adicional sobre la app.
 
-## Imágenes
-(Agrega aquí una captura de pantalla de la aplicación si lo deseas)
