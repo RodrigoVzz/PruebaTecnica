@@ -1,6 +1,6 @@
 # Prueba Técnica - Aplicación en React Native
 
-Este es un proyecto realizado como parte de una prueba técnica de desarrollo en React Native. La aplicación permite navegar entre diferentes pantallas utilizando un menú desplegable (Drawer). La aplicación cuenta con una interfaz atractiva, con pantallas principales como Inicio, Detalles y Configuración. El diseño es responsive y utiliza tecnologías modernas como React Navigation y React Native.
+Este es un proyecto realizado como parte de una prueba técnica de desarrollo en React Native. La aplicación permite navegar entre diferentes pantallas. El diseño es responsive y utiliza tecnologías modernas como React Navigation y React Native.
 
 ## Cómo instalarlo
 1. Clona este repositorio:  
