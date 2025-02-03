@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TextInput, StyleSheet } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import CustomButton from './CustomButton'; 
 
 export default function HomeScreen() {
   const [input, setInput] = useState('');
@@ -30,9 +31,8 @@ export default function HomeScreen() {
         placeholder="Escribe algo"
         placeholderTextColor="#bbb"
       />
-      <TouchableOpacity style={styles.button} onPress={saveData}>
-        <Text style={styles.buttonText}>Guardar</Text>
-      </TouchableOpacity>
+      
+      <CustomButton title="Guardar" onPress={saveData} />
       {savedData ? (
         <Text style={styles.result}>¡Guardado: {savedData}</Text>
       ) : null}
@@ -53,18 +53,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#f9f9f9',
     fontSize: 16,
   },
-  button: {
-    backgroundColor: '#4CAF50',
-    paddingVertical: 12,
-    paddingHorizontal: 30,
-    borderRadius: 8,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.3,
-    shadowRadius: 3.5,
-    elevation: 5,
-  },
-  buttonText: { color: '#fff', fontSize: 18, fontWeight: 'bold' },
   result: {
     marginTop: 20,
     fontSize: 16,
