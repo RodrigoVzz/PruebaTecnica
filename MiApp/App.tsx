@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import HomeScreen from './src/screens/HomeScreen';
 import DetailsScreen from './src/screens/DetailsScreen';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
 const Drawer = createDrawerNavigator();
 
@@ -11,12 +11,14 @@ function CustomDrawerContent(props) {
   return (
     <View style={styles.drawerContainer}>
       <Text style={styles.drawerTitle}>Menú Principal</Text>
-      <View style={styles.drawerItem}>
+      
+      <TouchableOpacity style={styles.drawerItem} onPress={() => props.navigation.navigate('Home')}>
         <Text style={styles.drawerItemText}>Inicio</Text>
-      </View>
-      <View style={styles.drawerItem}>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.drawerItem} onPress={() => props.navigation.navigate('Details')}>
         <Text style={styles.drawerItemText}>Detalles</Text>
-      </View>
+      </TouchableOpacity>
     </View>
   );
 }
