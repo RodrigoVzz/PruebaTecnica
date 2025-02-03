@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TextInput, StyleSheet } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import CustomButton from './CustomButton'; 
 
-export default function HomeScreen() {
+export default function HomeScreen({ navigation }) {
   const [input, setInput] = useState('');
   const [savedData, setSavedData] = useState('');
 
@@ -23,18 +22,21 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Guardar datos en LocalStorage</Text>
+      <Text style={styles.title}>Almacenar en LocalStorage</Text>
       <TextInput
         style={styles.input}
         value={input}
         onChangeText={setInput}
         placeholder="Escribe algo"
-        placeholderTextColor="#bbb"
       />
-      
-      <CustomButton title="Guardar" onPress={saveData} />
+      <Button title="Guardar" onPress={saveData} />
       {savedData ? (
-        <Text style={styles.result}>¡Guardado: {savedData}</Text>
+        <TouchableOpacity
+          style={styles.navigateButton}
+          onPress={() => navigation.navigate('Details', { savedData })}
+        >
+          <Text style={styles.navigateButtonText}>Ver Detalles</Text>
+        </TouchableOpacity>
       ) : null}
     </View>
   );
@@ -42,21 +44,17 @@ export default function HomeScreen() {
 
 const styles = StyleSheet.create({
   container: { flex: 1, justifyContent: 'center', alignItems: 'center', padding: 20 },
-  title: { fontSize: 22, fontWeight: 'bold', marginBottom: 20, color: '#333' },
-  input: {
-    width: '100%',
-    borderWidth: 1,
-    borderColor: '#ddd',
-    padding: 12,
-    marginBottom: 20,
-    borderRadius: 8,
-    backgroundColor: '#f9f9f9',
-    fontSize: 16,
+  title: { fontSize: 20, fontWeight: 'bold', marginBottom: 10 },
+  input: { width: '100%', borderWidth: 1, padding: 10, marginBottom: 10, borderRadius: 5 },
+  navigateButton: {
+    backgroundColor: '#007BFF',
+    padding: 10,
+    borderRadius: 5,
+    marginTop: 10,
   },
-  result: {
-    marginTop: 20,
+  navigateButtonText: {
+    color: '#fff',
     fontSize: 16,
-    color: '#4CAF50',
-    fontWeight: '600',
   },
 });
+
